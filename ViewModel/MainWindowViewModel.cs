@@ -188,7 +188,13 @@ namespace TextToTranslationList.ViewModel
                     });
 
 
-                    ID++;
+                    // AUmento l'iD solo se non è un commento
+                    if (type == TypeRow.data)
+                    {
+                        ID++;
+                    }
+
+
                 }
 
                 OnPropertyChanged("WordList");
@@ -244,8 +250,9 @@ namespace TextToTranslationList.ViewModel
                     sb.Append(SerializeXML(translation));
 
                 }
-                else {
-                    sb.Append("<!--"+ item.Key + "-->");
+                else
+                {
+                    sb.Append("<!--" + item.Key + "-->");
                 }
 
                 sb.Append(Environment.NewLine);
@@ -258,7 +265,8 @@ namespace TextToTranslationList.ViewModel
 
         }
 
-        private string SerializeXML(Translation input) {
+        private string SerializeXML(Translation input)
+        {
 
 
             //Create our own namespaces for the output
@@ -271,7 +279,7 @@ namespace TextToTranslationList.ViewModel
             XmlSerializer slz = new XmlSerializer(typeof(Translation));
 
             //Serialize the object with our own namespaces (notice the overload)
-            
+
             XmlSerializer xsSubmit = new XmlSerializer(typeof(Translation));
             string xml = "";
 
@@ -293,7 +301,7 @@ namespace TextToTranslationList.ViewModel
 
         }
 
-        public List<string> Languages = new List<string>() {"eng","ita","ger","fra","spa","rus","zh_HANS","zh_HANT","por","pol","pt_br","tur,kor"};
+        public List<string> Languages = new List<string>() { "eng", "ita", "ger", "fra", "spa", "rus", "zh_HANS", "zh_HANT", "por", "pol", "pt_br", "tur,kor" };
 
         #endregion
 
