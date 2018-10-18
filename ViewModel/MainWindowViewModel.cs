@@ -301,7 +301,7 @@ namespace TextToTranslationList.ViewModel
 
         }
 
-        public List<string> Languages = new List<string>() { "eng", "ita", "ger", "fra", "spa", "rus", "zh_HANS", "zh_HANT", "por", "pol", "pt_br", "tur,kor" };
+        public List<string> Languages = new List<string>() { "eng", "ita", "ger", "fra", "spa", "rus", "zh_HANS", "zh_HANT", "por", "pol", "pt_br", "tur","kor" };
 
         #endregion
 
